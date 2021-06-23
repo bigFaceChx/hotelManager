@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.roomMapper">
+    <resultMap id="roomResult" type="room">
+        <id property="rid" column="rid"/>
+        <result property="bedNum" column="bedNum"/>
+        <result property="state" column="state"/>
+        <result property="img" column="img"/>
+        <result property="roomType" column="roomType"/>
+        <result property="price" column="price"/>
+    </resultMap>
+    <select id="RoomFind" resultMap="roomResult">
+            SELECT r.rid,r.bedNum,r.state,r.img,rt.name 'roomType',rt.price
+            from room r,roomtype rt
+            where r.roomType=rt.roomType
+    </select>
+    <select id="RoomFindAndState" parameterType="String" resultMap="roomResult">
+            SELECT r.rid,r.bedNum,r.state,r.img,rt.name 'roomType',rt.price
+            from room r,roomtype rt
+            where r.roomType=rt.roomType and r.state=#{state}
+    </select>
+    <update id="changeState">
+           update room set state=#{state} where rid=#{rid}
+    </update>
+
+    <insert id="addRoom">
+        insert into room(rid,roomType,bedNum,state,img) values (#{rid},#{roomType},#{bedNum},"空闲",#{img})
+    </insert>
+    <delete id="delRoom" parameterType="room">
+        delete from room where rid=#{rid}
+    </delete>
+    <select id="findRoomById" parameterType="room" resultType="room">
+        select * from room where rid=#{rid}
+    </select>
+    <update id="updateRoom">
+        update room
+        <trim prefix="set" suffixOverrides=",">
+            <if test="room.rid!=null">
+                rid=#{room.rid},
+            </if>
+            <if test="room.roomType!=null">
+                roomType=#{room.roomType},
+            </if>
+            <if test="room.bedNum!=null">
+                bedNum=#{room.bedNum},
+            </if>
+            <if test="room.img!=null">
+                img=#{room.img},
+            </if>
+        </trim>
+        where rid=#{oldRid}
+    </update>
+</mapper>

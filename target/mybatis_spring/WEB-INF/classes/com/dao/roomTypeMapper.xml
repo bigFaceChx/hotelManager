@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.roomTypeMapper">
+
+        <select id="findRoomType" resultType="roomType">
+            select * from roomType
+        </select>
+
+        <insert id="addRoomType" parameterType="roomType">
+            insert into roomType(name,price) values (#{name},#{price})
+        </insert>
+        <update id="updateRoomType" parameterType="roomType">
+            update roomType
+            <trim prefix="set" suffixOverrides=",">
+                <if test="rt.roomType!=null">
+                    roomType=#{rt.roomType},
+                </if>
+                <if test="rt.name!=null">
+                    name=#{rt.name},
+                </if>
+                <if test="rt.price!=null">
+                    price=#{rt.price},
+                </if>
+            </trim>
+              where roomType=#{oldRoomType}
+        </update>
+</mapper>

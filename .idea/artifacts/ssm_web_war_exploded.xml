@@ -1,0 +1,57 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="ssm-web:war exploded">
+    <output-path>$PROJECT_DIR$/../maven-parent/ssm-web/target/ssm-web</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <exploded>true</exploded>
+        <module>ssm-web</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="ssm-web" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="archive" name="ssm-service-1.0-SNAPSHOT.jar">
+            <element id="module-output" name="ssm-service" />
+          </element>
+          <element id="archive" name="ssm-dao-1.0-SNAPSHOT.jar">
+            <element id="module-output" name="ssm-dao" />
+          </element>
+          <element id="archive" name="ssm-pojo-1.0-SNAPSHOT.jar">
+            <element id="module-output" name="ssm-pojo" />
+          </element>
+          <element id="library" level="project" name="Maven: org.springframework:spring-tx:5.3.1" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-jdbc:5.3.1" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-aspects:5.3.1" />
+          <element id="library" level="project" name="Maven: org.aspectj:aspectjweaver:1.9.6" />
+          <element id="library" level="project" name="Maven: org.mybatis:mybatis:3.5.6" />
+          <element id="library" level="project" name="Maven: org.mybatis:mybatis-spring:2.0.6" />
+          <element id="library" level="project" name="Maven: com.alibaba:druid:1.1.10" />
+          <element id="library" level="project" name="Maven: mysql:mysql-connector-java:8.0.22" />
+          <element id="library" level="project" name="Maven: com.google.protobuf:protobuf-java:3.11.4" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-test:5.3.1" />
+          <element id="library" level="project" name="Maven: log4j:log4j:1.2.17" />
+          <element id="library" level="project" name="Maven: javax.servlet:jsp-api:2.0" />
+          <element id="library" level="project" name="Maven: javax.servlet:servlet-api:2.4" />
+          <element id="library" level="project" name="Maven: javax.servlet.jsp.jstl:jstl:1.2" />
+          <element id="library" level="project" name="Maven: taglibs:standard:1.1.2" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:5.3.1" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-aop:5.3.1" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-beans:5.3.1" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-context:5.3.1" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-core:5.3.1" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-jcl:5.3.1" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-expression:5.3.1" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-web:5.3.1" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/../maven-parent/ssm-web/target/ssm-web/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="ssm-web/web/Web" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.registerMapper">
+    <insert id="ruzhu" parameterType="register" >
+        insert into register(rid,uid,startTime,number) values (#{rid},#{uid},#{startTime},#{number})
+    </insert>
+    <select id="findRegister" resultMap="registerResult">
+        SELECT re.reid,r.rid,u.uName,re.startTime,re.endTime,re.number,r.img,rt.name
+        from register re,room r,user u,roomType rt
+        WHERE re.rid=r.rid and re.uid=u.uNumber and r.roomType=rt.roomType
+    </select>
+    <resultMap id="registerResult" type="registerTwo">
+        <id property="reid" column="reid"/>
+        <result property="rid" column="rid"/>
+        <result property="uName" column="uName"/>
+        <result property="startTime" column="startTime"/>
+        <result property="endTime" column="endTime"/>
+        <result property="number" column="number"/>
+        <result property="roomType" column="name"/>
+        <result property="img" column="img"/>
+    </resultMap>
+    <update id="addEndTime">
+        update register set endTime=#{endTime} where rid=#{rid}
+        ORDER BY reid DESC
+        LIMIT 1
+    </update>
+    <delete id="registerMapper" parameterType="int">
+        delete from register where reid=#{reid}
+    </delete>
+</mapper>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../maven-parent/maven-parent.iml" filepath="$PROJECT_DIR$/../maven-parent/maven-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/ssm.iml" filepath="$PROJECT_DIR$/.idea/ssm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../maven-parent/ssm-dao/ssm-dao.iml" filepath="$PROJECT_DIR$/../maven-parent/ssm-dao/ssm-dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../maven-parent/ssm-pojo/ssm-pojo.iml" filepath="$PROJECT_DIR$/../maven-parent/ssm-pojo/ssm-pojo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../maven-parent/ssm-service/ssm-service.iml" filepath="$PROJECT_DIR$/../maven-parent/ssm-service/ssm-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../maven-parent/ssm-web/ssm-web.iml" filepath="$PROJECT_DIR$/../maven-parent/ssm-web/ssm-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../ssm02/ssm02.iml" filepath="$PROJECT_DIR$/../ssm02/ssm02.iml" />
+    </modules>
+  </component>
+</project>
